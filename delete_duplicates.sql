@@ -1,4 +1,6 @@
 
+-- Personal note : Ababacar Haidara
+-- 1. This script is used to delete duplicate records from the person table
 
 -- 1. Use a Common Table Expression (CTE) to rank the records by email
 -- 2. Use ROW_NUMBER() to assign a unique rank to each record within the same email group
@@ -9,7 +11,7 @@
 -- 7. The final result will be a table with unique emails
 WITH ranked_email AS (
     SELECT
-        id,
+        id, --  The unique identifier for each record
         email,
         ROW_NUMBER() OVER(PARTITION BY email ORDER BY id) AS rankId
     FROM person
