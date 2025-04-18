@@ -25,3 +25,20 @@ SELECT
     STDDEV(sum_revenue) AS STD_DEV_REV
 FROM monthly_revenue
 GROUP BY productname;
+
+/*
+stddev: L’écart-type mesure la régularité des données.
+Plus il est petit, plus c’est prévisible. Plus il est grand, plus c’est variable. 
+*/
+
+/*
+PRODUCTNAME | MIN_REV | MAX_REV | AVG_REV | STD_DEV_REV        |
+------------------------------------------------------------------
+| Basic       | 500     | 28000   | 13188   | 8123.763642197237  |
+| Expert      | 3000    | 46000   | 18000   | 13796.134724383252 |
+------------------------------------------------------------------
+
+Comment:
+Basic = revenus plus stables
+Expert = revenus plus fluctuants, donc plus risqués mais potentiellement plus rentables
+ */
